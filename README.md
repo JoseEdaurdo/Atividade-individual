@@ -40,7 +40,7 @@ Representa um evento, serviço ou compromisso agendado para um cliente.
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/CRUD-Estudio-Fotografico.git
+    git clone https://github.com/JoseEdaurdo/Atividade-individual.git
     ```
 2. Crie o ambiente virtual:
     ```bash
