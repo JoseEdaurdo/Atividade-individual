@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Lista de Sessão</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Data da Sessão</th>
+            <th>Tipo de Sessão</th>
+            <th>Local</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sessao in sessoes %}
+        <tr>
+            <td>{{ sessao.cliente_nome }}</td>
+            <td>{{ sessao.get_data_sessao() }}</td>
+            <td>{{ sessao.get_tipo_sessao() }}</td>
+            <td>{{ sessao.get_local() }}</td>
+            <td>{{ sessao.get_status() }}</td>
+            <td>
+                <a href="{{ url_for('update_sessao', id=sessao.get_id()) }}">Editar</a> |
+                <a href="{{ url_for('delete_sessao', id=sessao.get_id()) }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('create_sessao') }}">Nova Sessão</a> |
+<a href="{{ url_for('list_clientes') }}">Ver Clientes</a>
+
+
+{% endblock %}

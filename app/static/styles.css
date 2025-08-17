@@ -1,0 +1,149 @@
+/* ====== Reset básico ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+}
+
+/* ====== Títulos ====== */
+h1, h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* ====== Tabelas (Tema Escuro) ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+tr:hover {
+    background-color: #2a2a2a;
+}
+
+/* ====== Links de ação ====== */
+/* ====== Links de ação ====== */
+a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #887373;
+}
+
+
+/* ====== Botões ====== */
+button, .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover, .btn:hover {
+    background-color: #2980b9;
+}
+
+/* ====== Formulários ====== */
+/* ====== Formulários (tema escuro) ====== */
+form {
+    background: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    max-width: 500px;
+    color: #f1f1f1;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #f1f1f1;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 6px 0 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+form input::placeholder {
+    color: #bbb;
+}
+
+form select option {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+form button {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Link voltar */
+a.voltar {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 10px;
+    background-color: #444;
+    color: #f1f1f1;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a.voltar:hover {
+    background-color: #555;
+}

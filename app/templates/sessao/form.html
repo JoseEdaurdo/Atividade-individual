@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+{% if sessao %}Editar Sessão{% else %}Nova Sessão{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>{% if sessao %}Editar Sessão{% else %}Nova Sessão{% endif %}</h1>
+<form method="post">
+    Cliente:
+    <select name="id_cliente">
+        <option value="" disabled selected hidden>Escolha o cliente</option>
+        {% for cliente in clientes %}
+        <option value="{{ cliente.get_id() }}" {% if sessao and cliente.get_id() == sessao.get_id_cliente() %}selected{% endif %}>
+            {{ cliente.get_nome() }}
+        {% endfor %}
+    </select><br>
+    Data da Sessão: <input type="date" name="data_sessao" value="{{ sessao.get_data_sessao() if sessao else '' }}"><br>
+    Tipo de Sessão:
+    <select name="tipo_sessao">
+        <option value="" disabled selected hidden>Selecione o tipo da sessão</option>
+        <option value="Casamento" {% if sessao and sessao.get_tipo_sessao() == 'Casamento' %}selected{% endif %}>Casamento</option>
+        <option value="Aniversário" {% if sessao and sessao.get_tipo_sessao() == 'Aniversário' %}selected{% endif %}>Aniversário</option>
+        <option value="Ensaio Individual" {% if sessao and sessao.get_tipo_sessao() == 'Ensaio Individual' %}selected{% endif %}>Ensaio Individual</option>
+        <option value="Corporativo" {% if sessao and sessao.get_tipo_sessao() == 'Corporativo' %}selected{% endif %}>Corporativo</option>
+        <option value="Outro" {% if sessao and sessao.get_tipo_sessao() == 'Outro' %}selected{% endif %}>Outro</option>
+    </select><br>
+    Local: <input type="text" name="local" value="{{ sessao.get_local() if sessao else '' }}"><br>
+    Status:
+    <select name="status">
+        <option value="" disabled selected hidden>Selecione o status</option>
+        <option value="Agendada" {% if sessao and sessao.get_status() == 'Agendada' %}selected{% endif %}>Agendada</option>
+        <option value="Concluída" {% if sessao and sessao.get_status() == 'Concluída' %}selected{% endif %}>Concluída</option>
+        <option value="Cancelada" {% if sessao and sessao.get_status() == 'Cancelada' %}selected{% endif %}>Cancelada</option>
+    </select><br>
+    <button type="submit">Salvar</button>
+</form>
+<a href="{{ url_for('list_sessoes') }}">Voltar</a>
+{% endblock %}
